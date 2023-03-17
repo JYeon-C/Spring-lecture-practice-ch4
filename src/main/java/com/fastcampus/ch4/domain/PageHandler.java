@@ -21,7 +21,7 @@ public class PageHandler {
         this.pageSize = pageSize;
 
         totalPage = (int)Math.ceil(totalCnt / (double)pageSize); // 남으면 페이지가 하나 더 필요해서 올림
-        beginPage = page / naviSize * naviSize + 1;
+        beginPage = (page-1) / naviSize * naviSize + 1;
         endPage = Math.min(beginPage + naviSize -1 , totalPage); // totalPage보다 작을 수 있으니 Math.min 사용해서 둘 중 작은 수 사용
         showPrev = beginPage != 1;
         showNext = endPage != totalPage;
